@@ -5,6 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planetas: [],
 			personaje:{},
 			planeta: {},
+			favoritos:[],
+			
 		},
 		actions: {
 			obtenerPersonajes: async () => {
@@ -47,6 +49,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error)
 				}
 			},
+			agregarFavoritos:(nombre) => {
+				const store=getStore()
+				if(store.favoritos.includes(nombre)){
+					//si esta includio lo va a borrar
+					let oux= []
+					oux=store.favoritos.filter((item)=>item!== nombre)
+					setStore({favoritos:oux})
+				}
+				else{
+				setStore({favoritos:[...store.favoritos,nombre]})	
+				}
+			}
 		}
 	}
 };

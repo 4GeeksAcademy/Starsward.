@@ -27,6 +27,7 @@ export const Planetas = () => {
                             <p className="card-text">  climate: {items.climate} </p>
                             <p className="card-text">  gravity: {items.gravity} </p>
                             <Link to={"/singleplanets/"+(id+1)} className="btn btn-primary"> more info </Link>
+                            <div onClick={()=>actions.agregarFavoritos(items.name)} className="btn btn-outline-primary float-end"> ❤️ </div>
                         </div>
                     </div>
                      ))}

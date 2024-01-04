@@ -23,6 +23,7 @@ export const Personajes = () => {
                             <p className="card-text">  gender: {items.gender} </p>
                             <p className="card-text">  mass: {items.mass} </p>
                             <Link to={"/single/"+(id+1)} className="btn btn-primary"> more info </Link>
+                            <div onClick={()=>actions.agregarFavoritos(items.name)} className="btn btn-outline-primary float-end"> ❤️ </div>
                         </div>
                     </div>
                      ))}
