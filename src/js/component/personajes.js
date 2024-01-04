@@ -22,7 +22,7 @@ export const Personajes = () => {
                             <h5 className="card-title">{items.name}</h5>
                             <p className="card-text">  gender: {items.gender} </p>
                             <p className="card-text">  mass: {items.mass} </p>
-                            <a href="#" className="btn btn-primary"> more info </a>
+                            <Link to={"/single/"+(id+1)} className="btn btn-primary"> more info </Link>
                         </div>
                     </div>
                      ))}

@@ -3,7 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			personajes: [],
 			planetas: [],
-			
+			personaje:{},
+			planeta: {},
 		},
 		actions: {
 			obtenerPersonajes: async () => {
@@ -25,7 +26,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.log(error)
 				}
-			}
+			},
+			personajesIndividuales: async (id) => {
+				try {
+					const response = await fetch("https://swapi.dev/api/people/"+id)
+					const data = await response.json()
+					console.log(data)
+					setStore({ personaje: data})
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			planetasIndividuales: async (id) => {
+				try {
+					const response = await fetch("https://swapi.dev/api/planets/"+id)
+					const data = await response.json()
+					console.log(data)
+					setStore({ planeta: data})
+				} catch (error) {
+					console.log(error)
+				}
+			},
 		}
 	}
 };

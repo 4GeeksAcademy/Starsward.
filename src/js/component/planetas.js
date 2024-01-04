@@ -26,7 +26,7 @@ export const Planetas = () => {
                             <h5 className="card-title">{items.name}</h5>
                             <p className="card-text">  climate: {items.climate} </p>
                             <p className="card-text">  gravity: {items.gravity} </p>
-                            <a href="#" className="btn btn-primary"> more info </a>
+                            <Link to={"/singleplanets/"+(id+1)} className="btn btn-primary"> more info </Link>
                         </div>
                     </div>
                      ))}
